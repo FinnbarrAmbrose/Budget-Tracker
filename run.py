@@ -76,14 +76,24 @@ def generate_financial_report();
 """ 
 Generate a financial report from Income and Expenses worksheets.
 """
+    try:
+        income_sheet = SHEET.worksheet("Income")
+        expenses_sheet = SHEET.worksheet("Expenses")
+        income_data = income_sheet.get_all_values()
+        expenses_data = expenses_sheet.get_all_values()
+
+        total_income = sum(float(row[2]) for row in income_data[1:])  
+        total_expenses = sum(float(row[2]) for row in expenses_data[1:]) 
 
 
- print("\nFinancial Report")
+        net_savings = total_income - total_expenses
+
+        print("\nFinancial Report")
         print(f"Total Income")
         print(f"Total Expenses")
         print(f"Net Savings ")
 
-except Exception as e:
+    except Exception as e:
         print(f"Report failed to generate")
 
 
