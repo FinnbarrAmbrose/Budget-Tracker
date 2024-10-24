@@ -6,7 +6,7 @@ from datetime import datetime
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
+    "https://www.googleapis.com/auth/drive", 
     ]
 
 CREDS = Credentials.from_service_account_file("creds.json")
@@ -18,7 +18,7 @@ def get_financial_data(data_type):
     """
     users income,expenses  data
     """
-    example = "Example: 01/10/2024, Salary, 3000, Monthly base salary" if data_type == "Example: income" else "01/10/2024, Rent, 1200, Monthly rent payment"
+    example = "Example: 01/10/2024, Salary, 3000, Monthly base salary" if data_type == "income" else "01/10/2024, Rent, 1200, Monthly rent payment"
     print(f"enter {data_type} data in the format: Date, Category, Amount, Description (optional).")
     print(f"{example}")
 
