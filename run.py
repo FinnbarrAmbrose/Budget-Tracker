@@ -72,26 +72,25 @@ def update_worksheet(data, worksheet_name):
     except Exception as e:
         print(f"{e} update Failed")
 
-def generate_financial_report();
-""" 
-Generate a financial report from Income and Expenses worksheets.
-"""
+def generate_financial_report():
+    """ 
+    Generate a financial report from Income and Expenses worksheets.
+    """
     try:
         income_sheet = SHEET.worksheet("Income")
         expenses_sheet = SHEET.worksheet("Expenses")
-        income_data = income_sheet.get_all_values()
-        expenses_data = expenses_sheet.get_all_values()
+        income_data = income_sheet.get_all_values()[1:]
+        expenses_data = expenses_sheet.get_all_values()[1:]
 
-        total_income = sum(float(row[2]) for row in income_data[1:])  
-        total_expenses = sum(float(row[2]) for row in expenses_data[1:]) 
-
+        total_income = sum(float(row[2]) for row in income_data)  
+        total_expenses = sum(float(row[2]) for row in expenses_data) 
 
         net_savings = total_income - total_expenses
 
-        print("\nFinancial Report")
-        print(f"Total Income")
-        print(f"Total Expenses")
-        print(f"Net Savings ")
+        print("\nFinancial Report\n")
+        print(f"Total Income{total_income:.2f}")
+        print(f"Total Expenses{total_expenses:.2f}")
+        print(f"Net Savings {net_savings:.2f}\n")
 
     except Exception as e:
         print(f"Report failed to generate")
@@ -102,11 +101,13 @@ def main ():
     main function to run the Budget Tracker options for both income and expenses
     """
     while True:
-        action = input("Are you adding income or expense data? Enter 'income', 'expense' if not Enter 'quit' to exit: ").lower()
+        action = input("Are you adding income or expense data or do you what to generate Report? Enter 'income', 'expense', 'report' if not Enter 'quit' to exit: ").lower()
         if action in ["income", "expense"]:
             financial_data = get_financial_data(action)
-            worksheet_name = "income" if action == "income" else "Expenses"
+            worksheet_name = "Income" if action == "income" else "Expenses"
             update_worksheet(financial_data, worksheet_name)
+        elif action == "report":
+            generate_financial_report()
         elif action == "quit":
             print("go make some money before you try agein")
             break
