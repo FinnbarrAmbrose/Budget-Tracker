@@ -65,13 +65,14 @@ def update_financial_worksheet(data):
 
 def main ():
     """
-    main function to run the Budget Tracker options
+    main function to run the Budget Tracker options for both income and expenses
     """
     while True:
-        action = input("Are you adding income data? Enter 'yes'/n if not Enter 'quit' to exit: ").lower()
-        if action == "yes":
-            income_data = get_income_data()
-            update_income_worksheet(income_data)
+        action = input("Are you adding income or expense data? Enter 'income', 'expense' if not Enter 'quit' to exit: ").lower()
+        if action in ["income", "expense"]:
+            financial_data = get_financial_data(action)
+            worksheet_name = "income" if action == "income" else "expenses"
+            update_worksheet(financial_data, worksheet_name)
         elif action == "quit":
             print("go make some money before you try agein")
             break
