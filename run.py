@@ -40,7 +40,7 @@ def get_financial_data(data_type):
     
 def validate_financial_data(data):
     """
-    Validate uesr income data
+    Validate uesr financial data
     """
     try:
         if len(data) < 3:
@@ -54,7 +54,7 @@ def validate_financial_data(data):
         return False
     return True
 
-def update_financial_worksheet(data):
+def update_worksheet(data):
     """
     add income data to Income worksheet
     """
