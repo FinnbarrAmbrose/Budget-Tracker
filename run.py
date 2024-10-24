@@ -14,12 +14,13 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("Budget Tracker")
 
-def get_income_data():
+def get_financial_data():
     """
-    users income data
+    users income,expenses  data
     """
+    example = "Example: 01/10/2024, Salary, 3000, Monthly base salary" if data_type == "Example: income" else "01/10/2024, Rent, 1200, Monthly rent payment"
     print("enter income data in the format: Date, Category, Amount, Description (optional).")
-    print("Example: 01/10/2024, Salary, 3000, Monthly base salary")
+    print(f"{example}")
 
 
 
@@ -37,7 +38,7 @@ def get_income_data():
 
     return data_list
     
-def validate_income_data(data):
+def validate_financial_data(data):
     """
     Validate uesr income data
     """
@@ -53,7 +54,7 @@ def validate_income_data(data):
         return False
     return True
 
-def update_income_worksheet(data):
+def update_financial_worksheet(data):
     """
     add income data to Income worksheet
     """
