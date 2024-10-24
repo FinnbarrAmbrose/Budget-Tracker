@@ -54,14 +54,14 @@ def validate_financial_data(data):
         return False
     return True
 
-def update_worksheet(data):
+def update_worksheet(data, worksheet_name):
     """
-    add income data to Income worksheet
+    add data to worksheet
     """
-    print("Updating Income worksheet...")
-    income_sheet = SHEET.worksheet("Income")
+    print("Updating {worksheet_name} worksheet...")
+    income_sheet = SHEET.worksheet("worksheet_name")
     income_sheet.append_row(data)
-    print("Income worksheet updated")
+    print(f"{worksheet_name}worksheet updated")
 
 def main ():
     """
