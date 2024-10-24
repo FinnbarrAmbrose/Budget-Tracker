@@ -72,8 +72,19 @@ def update_worksheet(data, worksheet_name):
     except Exception as e:
         print(f"{e} update Failed")
 
+def generate_financial_report();
+""" 
+Generate a financial report from Income and Expenses worksheets.
+"""
 
 
+ print("\nFinancial Report")
+        print(f"Total Income")
+        print(f"Total Expenses")
+        print(f"Net Savings ")
+
+except Exception as e:
+        print(f"Report failed to generate")
 
 
 def main ():
