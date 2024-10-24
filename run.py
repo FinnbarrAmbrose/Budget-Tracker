@@ -68,9 +68,9 @@ def update_worksheet(data, worksheet_name):
         print(f"Updating {worksheet_name} worksheet...")
         worksheet = SHEET.worksheet(worksheet_name)
         worksheet.append_row(data)
-        print(f"{worksheet_name}worksheet updated")
+        print(f" {worksheet_name} worksheet updated")
     except Exception as e:
-        print(f"{e}update Failed")
+        print(f"{e} update Failed")
 
 
 
@@ -84,7 +84,7 @@ def main ():
         action = input("Are you adding income or expense data? Enter 'income', 'expense' if not Enter 'quit' to exit: ").lower()
         if action in ["income", "expense"]:
             financial_data = get_financial_data(action)
-            worksheet_name = "income" if action == "income" else "expenses"
+            worksheet_name = "income" if action == "income" else "Expenses"
             update_worksheet(financial_data, worksheet_name)
         elif action == "quit":
             print("go make some money before you try agein")
