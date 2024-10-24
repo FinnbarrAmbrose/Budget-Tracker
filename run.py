@@ -23,7 +23,6 @@ def get_financial_data(data_type):
     print(f"{example}")
 
 
-
     while True:
         data_str = input(f"Enter {data_type} here:\n")
         data_list = [entry.strip() for entry in data_str.split(',')]
@@ -36,8 +35,12 @@ def get_financial_data(data_type):
         
 
 
+
     return data_list
     
+
+
+
 def validate_financial_data(data):
     """
     Validate uesr financial data
@@ -50,18 +53,28 @@ def validate_financial_data(data):
         float(data[2])
         
     except ValueError as e:
-        print(f"Error: {e}")
+        print(f"{e} Error")
         return False
     return True
+
+
+
 
 def update_worksheet(data, worksheet_name):
     """
     add data to worksheet
     """
-    print("Updating {worksheet_name} worksheet...")
-    income_sheet = SHEET.worksheet("worksheet_name")
-    income_sheet.append_row(data)
-    print(f"{worksheet_name}worksheet updated")
+    try:
+        print(f"Updating {worksheet_name} worksheet...")
+        worksheet = SHEET.worksheet(worksheet_name)
+        worksheet.append_row(data)
+        print(f"{worksheet_name}worksheet updated")
+    except Exception as e:
+        print(f"{e}update Failed")
+
+
+
+
 
 def main ():
     """
