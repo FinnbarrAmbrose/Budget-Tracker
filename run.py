@@ -99,17 +99,43 @@ def generate_financial_report():
         print(f"Report failed to generate")
 
 
+def display_recent_entries(worksheet_name, num_entries=5):
+    """
+    display 5 recent entries from the specified worksheet.
+    """
+
+    try:
+        worksheet = SHEET.worksheet(worksheet_name)
+        entries = worksheet.get_all_values()[1:][::-1]
+        recent_entries = entries[:5]
+
+        print(f"\nMost Recent {worksheet_name} Entries:\n")
+        print(f"{'Date':<12} {'Category':<20} {'Amount':<10} {'Description'}")
+
+        for entry in recent_entries:
+            date, category, amount, description = entry
+            print(f"{date:<12} {category:<20} {amount:<10} {description}")
+
+    except Exception as e:
+        print(f"Failed to retrieve data from {worksheet_name} worksheet: {e}")
+
+
 def main():
     """
-    main function to run the Budget Tracker options for both income and expenses
+    main function to run the Budget Tracker options for both income and expenses and more
     """
     while True:
         action = input(
-            "Are you adding income or expense data or do you what to generate Report? Enter 'income', 'expense', 'report' if not Enter 'quit' to exit: ").lower()
+            "Are you adding income or expense data or do you what to displaying recent entries, generate Report? Enter 'income', 'expense', 'recent', 'report' if not enter 'quit' to exit: ").lower()
         if action in ["income", "expense"]:
             financial_data = get_financial_data(action)
             worksheet_name = "Income" if action == "income" else "Expenses"
             update_worksheet(financial_data, worksheet_name)
+        elif action == "recent":
+            entry_type = input(
+                "Which entries do you want to see? Enter 'income' or 'expenses': ").lower()
+            display_recent_entries(
+                "Income" if entry_type == "income" else "Expenses")
         elif action == "report":
             generate_financial_report()
         elif action == "quit":
