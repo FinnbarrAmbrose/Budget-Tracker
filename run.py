@@ -33,11 +33,7 @@ def get_financial_data(data_type):
         else:
             print("Invalid input, please follow the format in Example ")
         
-
-
-
     return data_list
-    
 
 
 
