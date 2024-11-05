@@ -1,7 +1,8 @@
 import gspread
 from google.oauth2.service_account import Credentials
 from datetime import datetime
-
+from colorama import init, Fore
+init(autoreset=True)
 
 
 SCOPE = [
@@ -20,7 +21,7 @@ def get_financial_data(data_type):
     """
     Users income or expenses data.
     """
-    print(f"Enter your {data_type} data below:")
+    print(Fore.RED + f"Enter your {data_type} data below:")
 
     date_input = input("Date (DD/MM/YYYY): ")
     category_input = input("Category: ")
@@ -31,7 +32,9 @@ def get_financial_data(data_type):
                  amount_input.strip(), description_input.strip()]
 
     while not validate_financial_data(data_list):
-        print("Invalid input, please re-enter your data following the correct format.")
+        print(
+            "Invalid input, please re-enter your data " 
+            "following the correct format.")
         date_input = input("Date (DD/MM/YYYY): ")
         category_input = input("Category: ")
         amount_input = input("Amount: ")
@@ -127,7 +130,10 @@ def main():
     """
     while True:
         action = input(
-            "Are you adding income or expense data or do you what to displaying recent entries, generate Report? Enter 'income', 'expense', 'recent', 'report' if not enter 'quit' to exit: ").lower()
+            "WHaAre you adding income or expense data or do you what to "
+            "displaying recent entries, generate Report? "
+            "Enter 'income', 'expense', 'recent', 'report' if not enter 'quit' "
+            "to exit: ").lower()
         if action in ["income", "expense"]:
             financial_data = get_financial_data(action)
             worksheet_name = "Income" if action == "income" else "Expenses"
@@ -149,3 +155,4 @@ def main():
 if __name__ == "__main__":
     print("Welcome to the Budget Tracker")
     main()
+
