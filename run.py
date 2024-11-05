@@ -3,6 +3,7 @@ from google.oauth2.service_account import Credentials
 from datetime import datetime
 
 
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -91,9 +92,9 @@ def generate_financial_report():
         net_savings = total_income - total_expenses
 
         print("\nFinancial Report\n")
-        print(f"Total Income{total_income:.2f}")
-        print(f"Total Expenses{total_expenses:.2f}")
-        print(f"Net Savings {net_savings:.2f}\n")
+        print(f"Total Income: {total_income:.2f}")
+        print(f"Total Expenses: {total_expenses:.2f}")
+        print(f"Net Savings: {net_savings:.2f}\n")
 
     except Exception as e:
         print(f"Report failed to generate")
