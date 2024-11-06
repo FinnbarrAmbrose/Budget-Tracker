@@ -21,7 +21,7 @@ def get_financial_data(data_type):
     """
     Users income or expenses data.
     """
-    print(f"Enter your {data_type} data below:")
+    print(f"\nEnter your {data_type} data below:")
 
     date_input = input(Fore.MAGENTA + "Date (DD/MM/YYYY): ")
     category_input = input(Fore.MAGENTA + "Category: ")
@@ -33,8 +33,8 @@ def get_financial_data(data_type):
 
     while not validate_financial_data(data_list):
         print(
-            "Invalid input, please re-enter your data " 
-            "following the correct format.")
+            "Invalid input, please re-enter your data"
+            " following the correct format.")
         date_input = input(Fore.MAGENTA + "Date (DD/MM/YYYY): ")
         category_input = input(Fore.MAGENTA + "Category: ")
         amount_input = input(Fore.MAGENTA + "Amount: ")
@@ -53,14 +53,15 @@ def validate_financial_data(data):
     try:
         if len(data) < 3 or not data[0] or not data[1] or not data[2]:
             raise ValueError(
-               Fore.RED +  "Missing required fields. Please ensure all fields are entered correctly.")
+                Fore.RED + "Missing required fields."
+                " Please ensure all fields are entered correctly.")
 
         datetime.strptime(data[0], "%d/%m/%Y")
 
         float(data[2])
 
     except ValueError as e:
-        print(Fore.MAGENTA + f"Validation error: {e}")
+        print(Fore.RED + f"Validation error: {e}")
         return False
 
     return True
@@ -71,7 +72,7 @@ def update_worksheet(data, worksheet_name):
     add data to worksheet
     """
     try:
-        print(f"Updating {worksheet_name} worksheet...")
+        print(Fore.BLUE + f"Updating {worksheet_name} worksheet...")
         worksheet = SHEET.worksheet(worksheet_name)
         worksheet.append_row(data)
         print(Fore.GREEN + f" {worksheet_name} worksheet updated")
@@ -80,7 +81,7 @@ def update_worksheet(data, worksheet_name):
 
 
 def generate_financial_report():
-    """ 
+    """
     Generate a financial report from Income and Expenses worksheets.
     """
     try:
@@ -114,24 +115,31 @@ def display_recent_entries(worksheet_name, num_entries=5):
         recent_entries = entries[:5]
 
         print(f"\nMost Recent {worksheet_name} Entries:\n")
-        print(f"{Fore.BLUE + 'Date':<12} {Fore.BLUE + 'Category':<20} {Fore.BLUE + 'Amount':<10} {Fore.BLUE + 'Description'}")
+        print(
+            f"{Fore.BLUE + 'Date':<12} {Fore.BLUE + 'Category':<20}"
+            " {Fore.BLUE + 'Amount':<10} {Fore.BLUE + 'Description'}")
 
         for entry in recent_entries:
             date, category, amount, description = entry
             print(f"{date:<12} {category:<20} {amount:<10} {description}")
 
     except Exception as e:
-        print(Fore.RED + f"Failed to retrieve data from {worksheet_name} worksheet: {e}")
+        print(
+            Fore.RED + f"Failed to retrieve data from {worksheet_name}"
+            " worksheet: {e}")
 
 
 def main():
     """
-    main function to run the Budget Tracker options for both income and expenses and more
+    main function to run the Budget Tracker options for both income"
+    " and expenses and more
     """
     while True:
         action = input(
-            "\nAre you adding data or do you what to display a total report or view the most recent entries \n" 
-            "For income enter 'Income' \n" "For expense enter 'Expense'\n" "For report enter 'Report'\n" "For recent enter 'Recent'\n"  
+            "\nAre you adding data or do you what to display a total report or"
+            "view the most recent entries \n"
+            "For income enter 'Income' \n" "For expense enter 'Expense'\n"
+            "For report enter 'Report'\n" "For recent enter 'Recent'\n"
             "if not enter 'quit' to exit\n" "\nEnter here:").lower()
         if action in ["income", "expense"]:
             financial_data = get_financial_data(action)
@@ -139,7 +147,8 @@ def main():
             update_worksheet(financial_data, worksheet_name)
         elif action == "recent":
             entry_type = input(
-                "\nWhich entries do you want to see? Enter 'income' or 'expenses':").lower()
+                "\nWhich entries do you want to see? Enter 'income' or"
+                " 'expenses':").lower()
             display_recent_entries(
                 "Income" if entry_type == "income" else "Expenses")
         elif action == "report":
@@ -152,6 +161,5 @@ def main():
 
 
 if __name__ == "__main__":
-    print(Fore.WHITE +"\n Welcome to the Budget Tracker")
+    print(Fore.WHITE + "\n Welcome to the Budget Tracker")
     main()
-
