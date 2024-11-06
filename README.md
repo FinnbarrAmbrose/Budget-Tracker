@@ -34,16 +34,27 @@ The Budget Tracker application helps users track income and expenses effectively
 5. Share your Google Sheet with the service account email.
 
 ## Features
-- **User-Friendly Interface**: Simple command-line interface for easy navigation.
-- **Data Entry for Income and Expenses**: Input transaction details, including date, category, amount, and optional description.
-- **Input Validation**: Ensures accurate and correct data entry with checks for format and positive numbers.
-- **Google Sheets Integration**: Real-time data storage and retrieval.
-- **Financial Reporting**: Generates a summary of total income, total expenses, and net savings.
-- **Recent Entries Display**: Displays the five most recent entries for quick access.
-- **Error Handling**: Catches exceptions and provides informative error messages to users.
-- **Customizable Entry Categories**: Allows input of custom categories for enhanced tracking flexibility.
-- **Quit Functionality**: Option to exit the application gracefully.
-- **Color-Coded Output**: Utilizes the Colorama library for improved readability in the terminal.
+- **User-Friendly Interface**: Simple command-line interface for easy interaction and navigation.
+
+- **Data Entry for Income and Expenses**: Allows users to input details for both income and expenses, including:
+Date, category, amount, and optional description.
+
+- **Input Validation**: Ensures accurate and correct data entry with checks for format and numbers.
+
+- **Google Sheets Integration**: Utilizes Google Sheets for real-time data storage and retrieval.Automatically updates the appropriate worksheet (Income or Expenses) upon data entry.
+
+- **Financial Reporting**: Generates a summary report of total income, total expenses, and net savings. Provides clear insights into financial. [Screen shot]
+
+- **Recent Entries Display**: Displays the five most recent entries from either the Income or Expenses worksheet. Allows users to quickly review their latest financial activities. [Screen shot]
+
+- **Error Handling**: Catches exceptions during data retrieval and updates, providing informative error messages to users. [Screen shot]
+
+- **Customizable Entry Categories**: Users can input custom categories for income and expenses, enhancing tracking flexibility. [Screen shot]
+
+- **Quit Functionality**: Provides an option to exit the application gracefully. [Screen shot]
+
+- **Color-Coded Output**: Utilizes the colorama library for color-coded text in the terminal, improving readability and user experience. [Screen shot]
+
 
 ## Usage
 ### Adding Income or Expense Data
