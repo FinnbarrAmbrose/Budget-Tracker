@@ -116,8 +116,7 @@ def display_recent_entries(worksheet_name, num_entries=5):
 
         print(f"\nMost Recent {worksheet_name} Entries:\n")
         print(
-            f"{Fore.BLUE + 'Date':<12} {Fore.BLUE + 'Category':<20}"
-            " {Fore.BLUE + 'Amount':<10} {Fore.BLUE + 'Description'}")
+            f"{Fore.BLUE + 'Date':<12} {Fore.BLUE + 'Category':<20} {Fore.BLUE + 'Amount':<10} {Fore.BLUE + 'Description'}")
 
         for entry in recent_entries:
             date, category, amount, description = entry

@@ -7,53 +7,78 @@ The Budget Tracker application helps users track income and expenses effectively
 - [Installation](#installation)
 - [Features](#features)
 - [Usage](#usage)
-- [Configuration](#configuration)
+- [Testing](#testing)
 - [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
 - [Contact](#contact)
 - [Acknowledgments](#acknowledgments)
 - [Future Enhancements](#future-enhancements)
 
 ## Installation
-1. the repository template:
+1. the repository template: [Template](https://github.com/Code-Institute-Org/p3-template)
    
-2. Navigate to the project directory:
-  
-3. Install the required packages:
-   pip install gspread google-auth colorama
-   
-5. Set up the Google Sheets API and create your `creds.json` file. Follow the steps below for API setup.
+2. set up Google Cloud Platform APIs for Google Drive
 
-### Google Sheets API Setup
-1. Go to the [Google Cloud Console](https://console.cloud.google.com/).
-2. Create a new project or select an existing project.
-3. Enable the Google Sheets API and the Google Drive API.
-4. Create credentials:
-   - Select "Service account" and follow the prompts.
-   - Download the file, place it in your project directory, and rename it `creds.json`.
-5. Share your Google Sheet with the service account email.
+3. add in the SCOPE `SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive
+    ]`
+
+3. Install the required packages: pip install gspread google-auth colorama
+   
+5. Set up the Google Sheets API Creds add it to the file srrucsher and rename it to `creds.json` 
+    - #### Google Sheets API Setup
+      1. Go to the [Google Cloud Console](https://console.cloud.google.com/).
+      2. Create a new project or select an existing project.
+      3. Enable the Google Sheets API and the Google Drive API.
+      4. Create credentials:
+         - Select "Service account" and follow the prompts.
+          - Download the file, place it in your project directory, and rename it `creds.json`.
+      5. Share your Google Sheet with the service account email.
 
 ## Features
 - **User-Friendly Interface**: Simple command-line interface for easy interaction and navigation.
 
+![image](https://github.com/user-attachments/assets/85ff3702-432d-4202-b65c-1763295293cc)
+
 - **Data Entry for Income and Expenses**: Allows users to input details for both income and expenses, including:
 Date, category, amount, and optional description.
 
+![image](https://github.com/user-attachments/assets/2e84d3a9-1838-48fe-afbe-1d37abce398e)
+
 - **Input Validation**: Ensures accurate and correct data entry with checks for format and numbers.
+
+![image](https://github.com/user-attachments/assets/480b1caf-0cff-4ede-8653-7575818a8484)
 
 - **Google Sheets Integration**: Utilizes Google Sheets for real-time data storage and retrieval.Automatically updates the appropriate worksheet (Income or Expenses) upon data entry.
 
-- **Financial Reporting**: Generates a summary report of total income, total expenses, and net savings. Provides clear insights into financial. [Screen shot]
+![image](https://github.com/user-attachments/assets/b9f53b0e-32b7-4b07-8baa-6795331a112c)
 
-- **Recent Entries Display**: Displays the five most recent entries from either the Income or Expenses worksheet. Allows users to quickly review their latest financial activities. [Screen shot]
+- **Financial Reporting**: Generates a summary report of total income, total expenses, and net savings. Provides clear insights into financial. 
 
-- **Error Handling**: Catches exceptions during data retrieval and updates, providing informative error messages to users. [Screen shot]
+![image](https://github.com/user-attachments/assets/d05c7346-3d46-49ad-b632-b40129aeec34)
 
-- **Customizable Entry Categories**: Users can input custom categories for income and expenses, enhancing tracking flexibility. [Screen shot]
+- **Recent Entries Display**: Displays the five most recent entries from either the Income or Expenses worksheet. Allows users to quickly review their latest financial activities.
 
-- **Quit Functionality**: Provides an option to exit the application gracefully. [Screen shot]
+![image](https://github.com/user-attachments/assets/67be77e4-4f72-4ad6-b504-08e1c52c5dea)
 
-- **Color-Coded Output**: Utilizes the colorama library for color-coded text in the terminal, improving readability and user experience. [Screen shot]
+- **Error Handling**: Catches exceptions during data retrieval and updates, providing informative error messages to users.
+
+![image](https://github.com/user-attachments/assets/48437d76-aeec-41aa-b2eb-7aaa5b721482)
+
+- **Customizable Entry Categories**: Users can input custom categories for income and expenses, enhancing tracking flexibility.
+
+![image](https://github.com/user-attachments/assets/60391f70-29dc-42c5-8cf4-7b56233df62d)
+
+- **Quit Functionality**: Provides an option to exit the application gracefully.
+
+![image](https://github.com/user-attachments/assets/60dcd559-022e-4050-8578-6e4905654a35)
+
+- **Color-Coded Output**: Utilizes the colorama library for color-coded text in the terminal, improving readability and user experience.
+
+![image](https://github.com/user-attachments/assets/9f4fbca6-a8bf-4298-82d4-4b4cd2802ae9)
+![image](https://github.com/user-attachments/assets/1bec52e4-8b0c-4a1c-a187-12d378fb2154)
+![image](https://github.com/user-attachments/assets/658d290c-1334-412c-8aab-e8000e0951a9)
 
 
 ## Usage
@@ -71,23 +96,27 @@ Date, category, amount, and optional description.
 ### Displaying Recent Entries
 - Enter "Recent" and specify whether you want to see "income" or "expenses" entries. The application will display the five most recent entries from the specified worksheet.
 
-## Configuration
-- Ensure the Google Sheets URL is correctly specified in your application code if applicable.
+## Testing
+Open my code to (https://pep8ci.herokuapp.com/#) Listed several errors in formatting as seen below
+ ![image](https://github.com/user-attachments/assets/88696b70-a7ec-4ff3-aaff-fa20ab13d35d)
+And so going through 1 by 1 Googling how to fix these errors I reduce them to 0
+ ![image](https://github.com/user-attachments/assets/758b4fba-5dea-472c-b333-28fabcb251a9)
+
 
 ## Troubleshooting
 - **Common Issues**:
-  - If you encounter issues, ensure your `creds.json` file is in the correct directory and contains valid credentials.
+  - If you encounter issues, ensure the `creds.json` file is in the correct directory and contains valid credentials.
   - Check for internet connectivity when accessing Google Sheets.
   - Review the input validation messages for guidance on correcting any data entry errors.
 
-## Contributing
-- Contributions are welcome! Feel free to submit issues or pull requests for enhancements, and include a description of your changes.
 
 ## Contact
-For questions or feedback, please reach out to me at [your-email@example.com] or visit my [GitHub profile](https://github.com/your-username).
+For questions or feedback, please reach out to me at my [GitHub profile](https://github.com/FinnbarrAmbrose).
 
 ## Acknowledgments
 - Special thanks to the developers of gspread and colorama for their fantastic libraries that enabled the functionality of this application.
+- Special thanks to the love sandwich walk though project help explain the finer details of start and development 
+- my GF for helping to make the use expires easier when the user is new to the program 
 
 ## Future Enhancements
 1. Create a report function that allows users to display financial data for specific dates or months.
