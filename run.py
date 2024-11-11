@@ -101,7 +101,7 @@ def generate_financial_report():
         print(Fore.BLUE + f"Net Savings: {net_savings:.2f}")
 
     except Exception as e:
-        print(Fore.RED + f"Report failed to generate")
+        print(Fore.RED + f"Report failed to generate: {e}")
 
 
 def display_recent_entries(worksheet_name, num_entries=5):
