@@ -116,7 +116,7 @@ def display_recent_entries(worksheet_name, num_entries=5):
 
         print(f"\nMost Recent {worksheet_name} Entries:\n")
         print(
-            f"{Fore.BLUE + 'Date':<12} {Fore.BLUE + 'Category':<20} {Fore.BLUE + 'Amount':<10} {Fore.BLUE + 'Description'}")
+            f"{Fore.BLUE + 'Date':<17} {Fore.BLUE + 'Category':<23} {Fore.BLUE + 'Amount':<20} {Fore.BLUE + 'Description'}")
 
         for entry in recent_entries:
             date, category, amount, description = entry
@@ -125,7 +125,7 @@ def display_recent_entries(worksheet_name, num_entries=5):
     except Exception as e:
         print(
             Fore.RED + f"Failed to retrieve data from {worksheet_name}"
-            " worksheet: {e}")
+            " worksheet:")
 
 
 def main():
@@ -148,8 +148,12 @@ def main():
             entry_type = input(
                 "\nWhich entries do you want to see? Enter 'income' or"
                 " 'expenses':").lower()
-            display_recent_entries(
-                "Income" if entry_type == "income" else "Expenses")
+            if entry_type == "income":             
+                display_recent_entries("Income")
+            elif entry_type == "expenses": 
+                display_recent_entries("Expenses")
+            else:
+                display_recent_entries(entry_type)
         elif action == "report":
             generate_financial_report()
         elif action == "quit":
