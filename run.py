@@ -137,9 +137,9 @@ def main():
         action = input(
             "\nAre you adding data or do you what to display a total report or"
             "view the most recent entries \n"
-            "For income enter 'Income' \n" "For expense enter 'Expense'\n"
-            "For report enter 'Report'\n" "For recent enter 'Recent'\n"
-            "if not enter 'quit' to exit\n" "\nEnter here:").lower()
+            "To upload income data enter 'Income' \n" "To upload expenses data enter 'Expense'\n"
+            "To view overall report enter 'Report'\n" "To view recent entries enter 'Recent'\n"
+            "If not enter 'quit' to exit\n" "\nEnter here:").lower()
         if action in ["income", "expense"]:
             financial_data = get_financial_data(action)
             worksheet_name = "Income" if action == "income" else "Expenses"
@@ -164,5 +164,11 @@ def main():
 
 
 if __name__ == "__main__":
-    print(Fore.WHITE + "\n Welcome to the Budget Tracker")
+    print(Fore.WHITE + "\n   Welcome to the Budget Tracker")
+    print(Fore.WHITE + "\nThe Budget Tracker will assist users in "
+            "managing their finances by allowing them to record and monitor"
+            " their income and expenses over time. This tool aims to" 
+            " provide clear visibility into financial habits, enabling"
+            " better budgeting decisions.")     
+
     main()
