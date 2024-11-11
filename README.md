@@ -35,6 +35,8 @@ The Budget Tracker application helps users track income and expenses effectively
          - Select "Service account" and follow the prompts.
           - Download the file, place it in your project directory, and rename it `creds.json`.
       5. Share your Google Sheet with the service account email.
+  
+  6. Put the credits dot Jason file into get dot ignore to ensure that the sensitive information there is not deployed or pushed to get up as it can contained personal information such as e-mail addresses for your Google Sheets
 
 ## Features
 - **User-Friendly Interface**: Simple command-line interface for easy interaction and navigation.
@@ -102,6 +104,7 @@ Open my code to (https://pep8ci.herokuapp.com/#) Listed several errors in format
 And so going through 1 by 1 Googling how to fix these errors I reduce them to 0
  ![image](https://github.com/user-attachments/assets/758b4fba-5dea-472c-b333-28fabcb251a9)
 
+Along with the testing for format I also manually tested inputs and they developed nation by in putting all the correct inputs such as date category amount description for income and expenses and the inputs for report and recent do ensure that they came out as desired I then entered incorrect inputs to test the validation for each stage to ensure that only the correct entries could be submitted
 
 ## Troubleshooting
 - **Common Issues**:
