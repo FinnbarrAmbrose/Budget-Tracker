@@ -116,7 +116,14 @@ For questions or feedback, please reach out to me at my [GitHub profile](https:/
 ## Acknowledgments
 - Special thanks to the developers of gspread and colorama for their fantastic libraries that enabled the functionality of this application.
 - Special thanks to the love sandwich walk though project help explain the finer details of start and development 
-- my GF for helping to make the use expires easier when the user is new to the program 
+- Special thanks to my GF for helping to make the use expires easier when the user is new to the program 
+
+- ### videos 
+    - [Python Tutorial: Using Try/Except Blocks for Error Handling](https://www.youtube.com/watch?v=NIWwJbo-9_8&pp=ygURcHl0aG9uIHRyeSBleGNlcHQ%3D)
+    - [Advanced Exception Handling in Python](https://www.youtube.com/watch?v=ZUqGMDppEDs&pp=ygUVcHl0aG9uIGVycm9yIGhhbmRsaW5n)
+    - [Colored Console Output in Python](https://www.youtube.com/watch?v=kf8kbUKeM5g&pp=ygUTcHl0aG9uIGNvbG9yZWQgdGV4dA%3D%3D)
+    - [Python Tutorial 7 - Formatting Output in Python](https://www.youtube.com/watch?v=Ln5dzg820PU&pp=ygUYcHl0aG9uIG91dHB1dCBmb3JtYXR0aW5n)
+    - [Python 101 Python Basics for Beginners Playlist](https://www.youtube.com/watch?v=JTFGllcJ29I&list=PLNnG2akFozlISSPF2UiUFSHieGCc_BA9b).
 
 ## Future Enhancements
 1. Create a report function that allows users to display financial data for specific dates or months.
