@@ -116,13 +116,14 @@ def display_recent_entries(worksheet_name, num_entries=5):
 
         print(f"\nMost Recent {worksheet_name} Entries:\n")
         print(
-            f"{Fore.BLUE + 'Date':<17} {Fore.BLUE + 'Category':<25} {Fore.BLUE + 'Amount':<15} {Fore.BLUE + 'Description'}")
+            f"{Fore.BLUE + 'Date':<17} {Fore.BLUE + 'Category':<26}"
+            f"{Fore.BLUE + 'Amount':<15} {Fore.BLUE + 'Description'}")
 
         for entry in recent_entries:
             date, category, amount, description = entry
             print(f"{date:<12} {category:<20} {amount:<10} {description}")
 
-    except Exception as e:
+    except Exception as worksheet_name:
         print(
             Fore.RED + f"Failed to retrieve data from {worksheet_name}"
             " worksheet:")
@@ -137,9 +138,12 @@ def main():
         action = input(
             "\nAre you adding data or do you what to display a total report or"
             "view the most recent entries \n"
-            "To upload income data enter 'Income' \n" "To upload expenses data enter 'Expense'\n"
-            "To view overall report enter 'Report'\n" "To view recent entries enter 'Recent'\n"
-            "If not enter 'quit' to exit\n" "\nEnter here:").lower()
+            "To upload income data enter 'Income' \n"
+            "To upload expenses data enter 'Expense'\n"
+            "To view overall report enter 'Report'\n"
+            "To view recent entries enter 'Recent'\n"
+            "If not enter 'quit' to exit\n"
+            "\nEnter here:").lower()
         if action in ["income", "expense"]:
             financial_data = get_financial_data(action)
             worksheet_name = "Income" if action == "income" else "Expenses"
@@ -148,9 +152,9 @@ def main():
             entry_type = input(
                 "\nWhich entries do you want to see? Enter 'income' or"
                 " 'expenses':").lower()
-            if entry_type == "income":             
+            if entry_type == "income":
                 display_recent_entries("Income")
-            elif entry_type == "expenses": 
+            elif entry_type == "expenses":
                 display_recent_entries("Expenses")
             else:
                 display_recent_entries(entry_type)
@@ -166,9 +170,9 @@ def main():
 if __name__ == "__main__":
     print(Fore.WHITE + "\n   Welcome to the Budget Tracker")
     print(Fore.WHITE + "\nThe Budget Tracker will assist users in "
-            "managing their finances by allowing them to record and monitor"
-            " their income and expenses over time. This tool aims to" 
-            " provide clear visibility into financial habits, enabling"
-            " better budgeting decisions.")     
+          "managing their finances by allowing them to record and monitor"
+          " their income and expenses over time. This tool aims to"
+          " provide clear visibility into financial habits, enabling"
+          " better budgeting decisions.")
 
     main()
