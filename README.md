@@ -1,7 +1,15 @@
 # Budget Tracker Application
 
 ## Description
-The Budget Tracker application helps users track income and expenses effectively using a user-friendly interface and Google Sheets for data storage. This application empowers users to make informed decisions about their spending and saving habits by simplifying the recording and analysis of financial transactions.
+The Budget Tracker application helps users track income and expenses effectively using a user-friendly interface and Google Sheets for data storage. This application empowers users to make informed decisions about their spending and saving habits by simplifying the recording and analysis of financial transactions. the Barefoot to using this programme is its features such as Real-time data integration with Google Sheets, customizable categories, and financial summaries.
+
+###Target Audience 
+1. People who want to manage personal finances effectively.
+2. Students tracking their monthly allowance or part-time job earnings.
+3. Professionals keeping an eye on income and expenses.
+4. Small Business Owners/Freelancers:
+5. People who are new to budgeting and want a simple tool to start.
+
 
 ## Table of Contents
 - [Installation](#installation)
@@ -17,6 +25,7 @@ The Budget Tracker application helps users track income and expenses effectively
 1. the repository template: [Template](https://github.com/Code-Institute-Org/p3-template)
    
 2. set up Google Cloud Platform APIs for Google Drive
+
 
 3. add in the SCOPE `SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -36,7 +45,7 @@ The Budget Tracker application helps users track income and expenses effectively
           - Download the file, place it in your project directory, and rename it `creds.json`.
       5. Share your Google Sheet with the service account email.
   
-  6. Put the credits dot Jason file into get dot ignore to ensure that the sensitive information there is not deployed or pushed to get up as it can contained personal information such as e-mail addresses for your Google Sheets
+  6. Put the credits dot Jason file into get dot to ignore to ensure that the sensitive information there is not deployed or pushed to get up as it can contain personal information such as e-mail addresses for your Google Sheets
 
 ## Features
 - **User-Friendly Interface**: Simple command-line interface for easy interaction and navigation.
