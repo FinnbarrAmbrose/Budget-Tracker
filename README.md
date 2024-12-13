@@ -120,7 +120,32 @@ Along with the testing for format I also manually tested inputs and they develop
   - If you encounter issues, ensure the `creds.json` file is in the correct directory and contains valid credentials.
   - Check for internet connectivity when accessing Google Sheets.
   - Review the input validation messages for guidance on correcting any data entry errors.
+  - 
+## Deployment to Heroku
+Make a Heroku Account
+  - Heroku Account: Set up an account on Heroku.com.
+  - 
+setting Up Heroku
+  - Create a New App:
+      Navigate to the Heroku dashboard and click "Create new app".
+      Choose a unique name related to the budget tracker and set your region.
+    
+Configuration
+   - Config Variables:
+Use Config Vars to set sensitive data like API keys or creds.json file for API authentication. Enter its contents as a value for a config var in the Heroku app settings.
+Deploying from GitHub
 
+Connect to GitHub:
+In the "Deploy" tab of your Heroku app, connect your app to your GitHub repository.
+
+Deployment Method:
+Choose between automatic deployment (which deploys upon each push to your GitHub repository) or manual deployment from a specified branch to maintain a stable version.
+
+Launch:
+Click "Deploy Branch" to start the build process. Heroku will install the required dependencies and launch your application.
+
+Verify Deployment:
+Once deployed, open the app's URL to ensure it runs correctly. Test its functionality thoroughly.
 
 ## Contact
 For questions or feedback, please reach out to me at my [GitHub profile](https://github.com/FinnbarrAmbrose).
