@@ -181,4 +181,4 @@ For questions or feedback, please reach out to me at my [GitHub profile](https:/
 1. Create a report function that allows users to display financial data for specific dates or months.
 2. Improve the recent entries feature to prioritize the most recent date rather than the most recent entry.
 3. Implement a multiple-choice category selection for income or expense entries to enhance data filtering in Google Sheets.
-
+4. Add in error handling for negative numbers entered under income and positive numbers entered under Expenses.
