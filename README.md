@@ -17,6 +17,7 @@ The Budget Tracker application helps users track income and expenses effectively
 - [Usage](#usage)
 - [Testing](#testing)
 - [Troubleshooting](#troubleshooting)
+- [Deployment and Development](#deployment-and-development)
 - [Contact](#contact)
 - [Acknowledgments](#acknowledgments)
 - [Future Enhancements](#future-enhancements)
@@ -136,7 +137,36 @@ Along with the testing for format I also manually tested inputs and they develop
   - Check for internet connectivity when accessing Google Sheets.
   - Review the input validation messages for guidance on correcting any data entry errors.
   - 
-## Deployment to Heroku
+
+## Deployment and Development
+### Cloning the Project
+1. **Install Git**: If Git isn't already installed, download it from the [Git website](https://git-scm.com/) and follow the setup instructions for your operating system.
+2. **Create a Project Folder**: Run the command:
+   ```bash
+   mkdir budget-tracker
+   ```
+3. **Navigate to the Project Directory**: Enter the directory:
+   ```bash
+   cd budget-tracker
+   ```
+4. **Clone the Repository**: Clone your project repository:
+   ```bash
+   git clone https://github.com/your-username/budget-tracker.git .
+   ```
+
+### Running the Project in the Terminal
+1. **Open Terminal**: Navigate to the project folder if you're not already there.
+2. **Install Dependencies**: Run the following command to install required Python packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Run the Application**: Start the Budget Tracker by executing:
+   ```bash
+   python main.py
+   ```
+   Replace `main.py` with the actual file name that contains the entry point for your project, such as `budget_tracker.py`, if applicable.
+
+### Deployment to Heroku
 Make a Heroku Account
   - Heroku Account: Set up an account on Heroku.com.
   - 
