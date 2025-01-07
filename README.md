@@ -114,6 +114,21 @@ And so going through 1 by 1 Googling how to fix these errors I reduce them to 0
  ![image](https://github.com/user-attachments/assets/758b4fba-5dea-472c-b333-28fabcb251a9)
 
 Along with the testing for format I also manually tested inputs and they developed nation by in putting all the correct inputs such as date category amount description for income and expenses and the inputs for report and recent do ensure that they came out as desired I then entered incorrect inputs to test the validation for each stage to ensure that only the correct entries could be submitted
+## User Options and Expected Outcomes
+
+| **Option**        | **Description**                                                                                          | **Expected Outcome**                                                                                 | **Pass or Fail** |
+|--------------------|----------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|------------------|
+| `Income`          | Allows the user to input income data, including date, category, amount, and optional description.         | The data is validated and added to the "Income" worksheet if valid. A success or failure message is displayed. | Pass             |
+| `Expense`         | Allows the user to input expense data, including date, category, amount, and optional description.        | The data is validated and added to the "Expenses" worksheet if valid. A success or failure message is displayed. | Pass             |
+| `Report`          | Generates a financial report that calculates and displays total income, total expenses, and net savings. | A summary report is printed, showing the user's financial status.                                      | Pass             |
+| `Recent`          | Displays the most recent entries (up to 5) from either the "Income" or "Expenses" worksheet.             | The user views the last 5 entries from the selected worksheet, with details formatted neatly.         | Pass             |
+| `Quit`            | Exits the program.                                                                                       | A farewell message is displayed, and the program terminates.                                         | Pass             |
+| `Invalid Input`      | Handles unrecognized inputs or actions.                                                                 | An error message is displayed, prompting the user to try again.                                       | Pass             |
+
+### Notes:
+- **Input Validation:** User inputs (dates, categories, and amounts) are validated to ensure data integrity.
+- **Error Handling:** Any issues (e.g., Google Sheets connection errors) are caught and an appropriate error message is displayed.
+- **Optional Description:** Users can provide additional details for income or expenses, though this field is not mandatory.
 
 ## Troubleshooting
 - **Common Issues**:
@@ -166,3 +181,4 @@ For questions or feedback, please reach out to me at my [GitHub profile](https:/
 1. Create a report function that allows users to display financial data for specific dates or months.
 2. Improve the recent entries feature to prioritize the most recent date rather than the most recent entry.
 3. Implement a multiple-choice category selection for income or expense entries to enhance data filtering in Google Sheets.
+
